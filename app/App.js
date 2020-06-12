@@ -2,8 +2,7 @@ import React from 'react';
 import { useFonts } from '@use-expo/font';
 import { StatusBar } from 'react-native';
 import { AppLoading } from 'expo';
-import Header from './src/components/Header';
-import Feed from './src/screens/Feed';
+import Routes from './src/Navigator';
 
 export default props => {
   let [fontsLoaded] = useFonts({
@@ -14,9 +13,9 @@ export default props => {
     return <AppLoading />;
   } 
   return (
-    <>
-      <StatusBar barStyle='dark-content' backgroundColor='transparent' translucent/>
-      <Feed />
-    </>
+      <>
+        <StatusBar barStyle='dark-content' backgroundColor='transparent' translucent/>
+        <Routes />
+      </>
   );
 };
