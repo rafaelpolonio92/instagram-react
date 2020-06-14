@@ -4,7 +4,16 @@ import { NavigationContainer } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Feed from './screens/Feed';
 import AddPhoto from './screens/AddPhoto';
+import Profile from './screens/Profile';
+import Login from './screens/Login';
+// import { createSwitchNavigator } from 'react-navigation';
 
+// const loginOrProfileRouter = createSwitchNavigator({
+//   Profile: Profile,
+//   Auth: Login
+// }, {
+//   initialRouteName: 'Profile'
+// })
 
 const Tab = createBottomTabNavigator();
 
@@ -35,7 +44,7 @@ function Routes() {
       />
       <Tab.Screen
         name="Profile"
-        component={Feed}
+        component={loginOrProfileRouter}
         options={{
           title: 'Profile',
           tabBarIcon: ({ tintColor }) =>
@@ -45,5 +54,6 @@ function Routes() {
       </Tab.Navigator>
     </NavigationContainer>
   );
-}
+};
+
 export default Routes;

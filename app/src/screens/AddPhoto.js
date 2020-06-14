@@ -51,7 +51,7 @@ class AddPhoto extends Component {
   }
 
   save = async () => {
-    Alert.alert('Imagem salva!', this.state.comment)
+    Alert.alert('Imagem adicionada!', this.state.comment)
   }
   
   render() {
