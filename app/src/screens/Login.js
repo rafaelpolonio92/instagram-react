@@ -6,14 +6,17 @@ import {
   TouchableOpacity,
   TextInput
 } from 'react-native';
-
+import { connect } from 'react-redux';
+import { login } from '../store/actions/user';
 class Login extends Component {
   state = {
+    name: 'Temp',
     email: '',
     password: '',
   }
 
   login = () => {
+    this.props.onLogin({ ...this.state })
     this.props.navigation.navigate('Profile')
   };
 
@@ -42,6 +45,12 @@ class Login extends Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onLogin: user => dispatch(login(user))
+  }
+};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -67,4 +76,5 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Login;
+export default connect(null, mapDispatchToProps)(Login);
+// export default Login

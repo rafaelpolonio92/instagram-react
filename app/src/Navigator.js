@@ -30,7 +30,7 @@ const LoginNavigator = () => (
 
 const StackNavigator = () => (
   <AppStack.Navigator
-    initialRouteName='Profile'
+    initialRouteName='Auth'
     headerMode='screen'
     screenOptions={{
       cardStyle: {
