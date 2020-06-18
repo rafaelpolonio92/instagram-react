@@ -1,5 +1,4 @@
 import { ADD_POST, ADD_COMMENT } from '../actions/actionTypes';
-import { DefaultTransition } from '@react-navigation/stack/lib/typescript/src/TransitionConfigs/TransitionPresets';
 
 const initialState = {
   posts: [{
