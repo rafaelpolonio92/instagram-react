@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableWithoutFeedback as TWF, Alert, TextInput } from 'react-native';
+import { View, Text, StyleSheet, TouchableWithoutFeedback as TWF, TextInput } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import { connect } from 'react-redux';
+import { addComment } from '../store/actions/posts';
 class AddComment extends Component {
   state = {
     comment: '',
@@ -9,8 +10,16 @@ class AddComment extends Component {
   }
 
   handleAddComment = () => {
-    Alert.alert('Adicionado!', this.state.comment)
-  }
+    this.props.onAddComment({
+      postId: this.props.postId,
+      comment: {
+        nickname: this.props.name,
+        comment: this.state.comment
+      }
+    })
+
+    this.setState({ comment: '', editMode: false });
+  };
 
   render() {
     let commentArea = null
@@ -63,6 +72,18 @@ const styles = StyleSheet.create({
   input: {
     width: '90%'
   }
-})
+});
 
-export default AddComment;
+const mapStateToProps = ({ user }) => {
+  return {
+    name: user.name
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAddComment: payload => dispatch(addComment(payload))
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddComment);

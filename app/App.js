@@ -4,8 +4,10 @@ import { StatusBar } from 'react-native';
 import { AppLoading } from 'expo';
 import { Provider } from 'react-redux';
 import Routes from './src/Navigator';
-
+import axios from 'axios';
 import storeConfig from './src/store/storeConfig';
+
+axios.defaults.baseURL = 'https://polonio-ig-project.firebaseio.com/';
 
 const store = storeConfig();
 
