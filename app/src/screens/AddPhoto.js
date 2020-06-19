@@ -36,8 +36,6 @@ class AddPhoto extends Component {
       quality: 1
     });
 
-    console.log(res);
-
     if (!res.cancelled) {
       this.setState({ image: res.uri });
     }
@@ -65,7 +63,7 @@ class AddPhoto extends Component {
       Alert.alert('Falha!', noUser);
       return
     };
-    this.props.addPost({
+    this.props.onAddPost({
       id: Math.random(),
       nickname: this.props.name,
       email: this.props.email,
