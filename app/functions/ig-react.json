@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "polonio-ig-project",
+  "private_key_id": "c4eb83dbd6543d584b0f358fb1062668a9dd0232",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCTmah+EmYNUP2B\nre7acgDa6xyFF2f218i9WDSkOtRNiKiPAGiIaaJdz3lAigDwjkaMpvJCTT7vrKCC\nEdfDzcjbDTV3h3pA3dyxwKxtGiJFDg5dSwdNgwbelCN4gIlzT0o97D3JNhWPmmk5\niVkwMoHysTEDlHCmgJDib6JTn4W+qzFu6bYCy9v8Yt8l2j0rA8VtKwDje6KY54PJ\nmfw7REEaJFZc4kCXGBtxmnIiH+640TA1rFz8illFD3VWJFKgYYIJdFtU6yuuKErr\njnXpIPjoklwCMAUZPx5Rul9NDhafhiTEuCQJXkQcCOrP93Jc7DkrRrX7yZH19ItU\n7T5kaZMfAgMBAAECggEAJmGksPPz2a6f3WLvY5qVolfVGL7XaBcAukv/lF0/69GH\nk3gVtrNRZ3eWHjREvkkhC142TQttPEH1kx00sFQI0P2EU8rE/a0zwH1L2Ssckjxv\ne88Q3RUfai23c5RpKbUKp0ORZYtM3ATZK/8NVD0uEYAGMNoe2Q1Bn8BLw9cNnmDc\nwkYjryx8iRjE04X2hDBYAb9P53jI8hGzpd92hLJAzivVNrQBRXzlxOtY2P4K0g3/\nm+6WgdsZcsH/dLaoCrNKAfPbIhJ6TDKB92m845G2zxnYhzkMuyvSvN5XmMj5xomb\nToEMc/y/YTIO/xWVfQxXIabyfQmK71LHWygQWkUPgQKBgQDNEik3m7rPt1OEZAlQ\nA7z81wsUF8KiryeUnUr+QXK0pJC3LUraIVXEO8kNcU0SHte1rRxHwrbAhL7clAGw\nizk/24VRXctXj6tG8pWw6C4D2Yd9/UFJrnFjMqe6XVFDhpEieiV2XThWTYIjCrZl\n0mrMRD+EFcbmFcxpkDpa99o/IQKBgQC4QatYBHYl/kIRqDUPfaNvPGUuKJOW3lLS\nIKKRJ/vTxqd9YQZKd5bZVL7zPd06wY84WU0zHMfM0ZFtXW2Ugz8UtIASf61ynjiL\nShA6mqRjVf7D7O8nRQ+OtPF4J6PKPfMmCpM8H2/Qsg3DN4Ahrp7OH4IwyX+ut3t2\nT7+ap2TKPwKBgH3CC2C8sZ08MY1Yw5U8FaOARJz3zTZy73Tl2N1/SVaaLN0Ie4S1\nOKF0gGEsADWCkIorNNKVB/mb7mfapAad+me8uU8ik9aIlmKV1VJ9r+pQdhS/QFBt\nF7/bipxxKaqdVVetTFf/5tKWCZ5vrVdX6IKHv+PCbw0ehRKfjgnHQSHBAoGAdGJm\njG4lAtKbgPOysFo3xadscb+HmiBMSBX9GZsb4iT03qlOg/MOAbEZ/CLzfo2MnZcq\nwEJJogItzdrZwJk2Wym4S/cB5Ag0xya9IYdUlrpW9gLO/QsOTKHWdIL1XmXLFBhR\n8AQbaMNPFiQUdzIJdUFJxu9AC2gyQAUXjeR2MZkCgYBXPBiveWvsX2sVc5KBZ05T\nKOnVldXJZhSfFhlaJis+eMueHfaW45hZ+mKwSbYBmjxnzD0NQ6VpcPseStXuxo2g\nbXVjanwIW1LINa7kcGZa6v7OjZNS19/WfaD78/Kfdv5CX2n++NncIAl68FacOezB\nKZuuoA/HAG9PWu1Z0lAKpg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-bmw8l@polonio-ig-project.iam.gserviceaccount.com",
+  "client_id": "113432695718049427694",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-bmw8l%40polonio-ig-project.iam.gserviceaccount.com"
+}
