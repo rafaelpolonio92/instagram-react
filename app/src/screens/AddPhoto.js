@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Buffer } from 'buffer'
 import { connect } from 'react-redux';
 import { addPost } from '../store/actions/posts';
 import {
@@ -21,6 +22,7 @@ const noUser = 'Você precista estar logado para adicionar imagens';
 class AddPhoto extends Component {
   state = {
     image: null,
+    imageb64: null,
     comment: '',
   };
 
@@ -35,9 +37,9 @@ class AddPhoto extends Component {
       aspect: [4, 3],
       quality: 1
     });
-
+    const b64 = Buffer.from(res.uri).toString('base64')
     if (!res.cancelled) {
-      this.setState({ image: res.uri });
+      this.setState({ image: res.uri, imageb64: b64 });
     }
   };
 
@@ -52,9 +54,9 @@ class AddPhoto extends Component {
       aspect: [4, 3],
       quality: 1
     });
-
+    const b64 = Buffer.from(res.uri).toString('base64')
     if (!res.cancelled) {
-      this.setState({ image: res.uri, base64: res.data });
+      this.setState({ image: res.uri, imageb64: b64 });
     }
   }
 
@@ -68,6 +70,7 @@ class AddPhoto extends Component {
       nickname: this.props.name,
       email: this.props.email,
       image: this.state.image,
+      imageb64: this.state.imageb64,
       comment: [{
         nickname: this.props.name,
         comment: this.state.comment
