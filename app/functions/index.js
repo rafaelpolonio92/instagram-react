@@ -5,10 +5,10 @@ const uuid = require('uuidv4');
 const { Storage } = require('@google-cloud/storage');
 const storage = new Storage({
   projectId: 'polonio-ig-project',
-  keyFilename: 'ig-react.json',
+  keyFilename: './ig-react.json',
 });
 
-exports.uploadImage = functions.https.onRequest((request, response) => {
+exports.uploadFirebaseImage = functions.https.onRequest((request, response) => {
   cors(request, response, () => {
     try {
       fs.writeFileSync('/tmp/imageToSave.jpg', 
