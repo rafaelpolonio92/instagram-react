@@ -7,10 +7,9 @@ const httpClient = axios.create({
 
 export const addPost = (post) => {
   return dispatch => {
-    httpClient.post('/uploadFirebaseImage', {data: post.image})
+    httpClient.post('/uploadFirebaseImage', {data: post.imageb64})
       .catch(err => console.log(err))
       .then(res => {
-        console.log(res)
         post.image = res.data.imageUrl
         axios.post('/posts.json', { ...post })
           .catch(err => console.log(err))

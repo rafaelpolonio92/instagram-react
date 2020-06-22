@@ -1,7 +1,7 @@
 const functions = require('firebase-functions');
 const cors = require('cors')({ origin: true });
 const fs = require('fs');
-const uuid = require('uuidv4');
+const { uuid } = require('uuidv4');
 const { Storage } = require('@google-cloud/storage');
 const storage = new Storage({
   projectId: 'polonio-ig-project',
@@ -9,7 +9,6 @@ const storage = new Storage({
 });
 
 exports.uploadFirebaseImage = functions.https.onRequest((request, response) => {
-  cors(request, response, () => {
     try {
       fs.writeFileSync('/tmp/imageToSave.jpg', 
         request.body.image, 'base64')
@@ -40,5 +39,4 @@ exports.uploadFirebaseImage = functions.https.onRequest((request, response) => {
       console.log(err);
       return response.status(500).json({ error: err })
     }
-  })
 });
