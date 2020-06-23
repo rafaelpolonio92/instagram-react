@@ -10,6 +10,7 @@ const storage = new Storage({
 
 exports.uploadFirebaseImage = functions.https.onRequest((request, response) => {
     try {
+      console.log(request.body.image)
       fs.writeFileSync('/tmp/imageToSave.jpg', 
         request.body.image, 'base64')
       
@@ -17,7 +18,7 @@ exports.uploadFirebaseImage = functions.https.onRequest((request, response) => {
         const id = uuid();
         bucket.upload('/tmp/imageToSave.jpg', {
           uploadType: 'media',
-          destination: `/posts/${id}.jpg`,
+          destination: `posts/${id}.jpg`,
           metadata: {
             metadata: {
               contentType: 'image/jpeg',
@@ -30,7 +31,7 @@ exports.uploadFirebaseImage = functions.https.onRequest((request, response) => {
             return response.status(500).json({ error: err })
           } else {
             const fileName = encodeURIComponent(file.name)
-            const imageUrl = 'https://firebasestorage.googleapis.com/v0/b'
+            const imageUrl = 'https://firebasestorage.googleapis.com/v0/b/'
               + bucket.name + '/o/' + fileName + '?alt=media&token=' + id
             return response.status(201).json({ imageUrl: imageUrl })
           }
