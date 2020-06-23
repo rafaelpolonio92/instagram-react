@@ -1,4 +1,4 @@
-import { ADD_POST, ADD_COMMENT } from './actionTypes';
+import { SET_POSTS, ADD_COMMENT } from './actionTypes';
 import axios from 'axios';
 
 const httpClient = axios.create({
@@ -22,5 +22,30 @@ export const addComment = (payload) => {
   return {
     type: ADD_COMMENT,
     payload
+  }
+};
+
+export const setPosts = (posts) => {
+  return {
+    type: SET_POSTS,
+    payload: posts,
+  }
+};
+
+export const getPosts = () => {
+  return dispatch => {
+    axios.get('/posts.json')
+      .catch(err => console.log(err))
+      .then(res => {
+        const rawPosts = res.data
+        const posts = []
+        for (let key in rawPosts) {
+          posts.push({
+            ...rawPosts[key],
+            id: key
+          })
+        }
+        dispatch(setPosts(posts))
+      })
   }
 };
