@@ -13,7 +13,7 @@ exports.uploadFirebaseImage = functions.https.onRequest((request, response) => {
       console.log(request.body.image)
       fs.writeFileSync('/tmp/imageToSave.jpg', 
         request.body.image, 'base64')
-      
+        
         const bucket = storage.bucket('polonio-ig-project.appspot.com');
         const id = uuid();
         bucket.upload('/tmp/imageToSave.jpg', {
