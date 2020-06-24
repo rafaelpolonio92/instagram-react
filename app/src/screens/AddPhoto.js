@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Buffer } from 'buffer'
 import { connect } from 'react-redux';
 import { addPost } from '../store/actions/posts';
 import {
@@ -35,11 +34,11 @@ class AddPhoto extends Component {
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
       aspect: [4, 3],
-      quality: 1
+      quality: 1,
+      base64: true
     });
-    const b64 = Buffer.from(res.uri).toString('base64')
     if (!res.cancelled) {
-      this.setState({ image: res.uri, imageb64: b64 });
+      this.setState({ image: res.uri, imageb64: res.base64 });
     }
   };
 
